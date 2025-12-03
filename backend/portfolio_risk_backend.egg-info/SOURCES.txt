@@ -1,0 +1,6 @@
+pyproject.toml
+portfolio_risk_backend.egg-info/PKG-INFO
+portfolio_risk_backend.egg-info/SOURCES.txt
+portfolio_risk_backend.egg-info/dependency_links.txt
+portfolio_risk_backend.egg-info/requires.txt
+portfolio_risk_backend.egg-info/top_level.txt
