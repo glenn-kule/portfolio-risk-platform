@@ -8,11 +8,12 @@ RUN apt-get update && apt-get install -y \
     postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements
+# Copy requirements first for better caching
 COPY pyproject.toml ./
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -e .
+# Install Python dependencies including email-validator
+RUN pip install --no-cache-dir -e . && \
+    pip install --no-cache-dir email-validator
 
 # Copy application code
 COPY . .

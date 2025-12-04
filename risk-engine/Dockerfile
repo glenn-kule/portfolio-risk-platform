@@ -1,7 +1,8 @@
-FROM rust:1.75 as builder
+FROM rust:1.83 as builder
 
 WORKDIR /app
-COPY Cargo.toml Cargo.lock ./
+COPY Cargo.toml ./
+COPY Cargo.lock ./
 COPY src ./src
 
 # Build release binary

@@ -32,14 +32,16 @@ export interface User {
     base_currency: string;
   }
   
-  export enum AssetClass {
-    EQUITY = "equity",
-    BOND = "bond",
-    CASH = "cash",
-    CRYPTO = "crypto",
-    COMMODITY = "commodity",
-    REAL_ESTATE = "real_estate",
-  }
+  export const AssetClass = {
+    EQUITY: "equity",
+    BOND: "bond",
+    CASH: "cash",
+    CRYPTO: "crypto",
+    COMMODITY: "commodity",
+    REAL_ESTATE: "real_estate",
+  } as const;
+  
+  export type AssetClass = typeof AssetClass[keyof typeof AssetClass];
   
   export interface Holding {
     id: number;
